@@ -1,10 +1,15 @@
-import '../App.css';
+import '../Styles/App.css';
+import Layout from './Layout';
+import Home from './Pages/Home';
+
 
 function App() {
   return (
-    <div>
-      <h2>Hello Bro</h2>
-    </div>
+    <>
+      <Layout>
+        <Home/>
+     </Layout>
+    </>
   );
 }
 
