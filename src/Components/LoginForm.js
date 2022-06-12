@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from './Button';
 import Form from './Form';
 import TextInput from './TextInput';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 
 
 const LoginForm = () => {
+  const navigate = useNavigate()
+  const [user] = useAuthState(auth)
+  if (user) {
+    navigate('/')
+  }
   const [
     signInWithEmailAndPassword,
     ,

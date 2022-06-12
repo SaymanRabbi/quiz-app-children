@@ -6,6 +6,7 @@ import Result from './Pages/Result';
 import Login from './Pages/Login';
 import Singup from './Pages/Singup';
 import { Route, Routes } from 'react-router-dom';
+import RequireAuth from './RequireAuth';
 
 
 function App() {
@@ -16,8 +17,12 @@ function App() {
           <Route path='/' element={<Home/>}></Route>
           <Route path='/signup' element={<Singup/>}></Route>
           <Route path='/login' element={ <Login/>}></Route>
-          <Route path='/quiz' element={<Quiz/>}></Route>
-          <Route path='/result' element={ <Result />}></Route>
+          <Route path='/quiz' element={<RequireAuth>
+            <Quiz/>
+          </RequireAuth>}></Route>
+          <Route path='/result' element={<RequireAuth>
+            <Result />
+          </RequireAuth>}></Route>
         </Routes>
      </Layout>
     </>
