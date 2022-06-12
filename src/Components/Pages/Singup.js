@@ -9,8 +9,9 @@ const Singup = () => {
             <h1>Create an account</h1>
             <div class="column">
                 <Illustration />
-                <Form clasName={`${classes.signup}`} />
+                <Form clasName={`${classes.signup}`}>
                 <TextInput type='text' placeholder="Enter name"/>
+                    </Form>
             </div>
         </>
     );
