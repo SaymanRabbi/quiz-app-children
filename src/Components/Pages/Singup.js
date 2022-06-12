@@ -17,7 +17,11 @@ const Singup = () => {
                    <TextInput type='password' placeholder="Enter password" icon="lock"/>
                     <TextInput type='password' placeholder="Confirm password" icon="lock_clock" />
                     <Checkbox text="I agree to the Terms &amp; Cinditions" />
-                    <Button>Submit Now</Button>
+                    <Button> 
+                        <span>
+                        Submit Now
+                        </span>
+                    </Button>
                     <div class="info">
               Already have an account? <a href="login.html">Login</a> instead.
             </div>
