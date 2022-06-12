@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Button from './Button';
 import Form from './Form';
 import TextInput from './TextInput';
@@ -8,11 +8,15 @@ import auth from '../firebase.init';
 
 
 const LoginForm = () => {
+  const location = useLocation()
+  let from = location.state?.from?.pathname || "/";
   const navigate = useNavigate()
   const [user] = useAuthState(auth)
-  if (user) {
-    navigate('/')
-  }
+  useEffect(() => {
+    if (user) {
+        navigate(from, { replace: true });
+    }
+}, [user, navigate, from])
   const [
     signInWithEmailAndPassword,
     ,
