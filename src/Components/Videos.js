@@ -4,7 +4,7 @@ import useVideolist from '../hooks/useVideolist';
 import classes from '../Styles/Videos.module.css'
 import Video from './Video'
 const Videos = () => {
-   const [videos,loading,error] = useVideolist()
+   const [videos] = useVideolist()
     return (
         <div className={classes.videos}>
             { videos.length>0 &&
